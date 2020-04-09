@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="top">
+    <view class='top01'><image  src="/img/banner.jpg"></image></view>
+    <view class='top02'>张三</view>
+    <view class="top03"><image src="/img/user/code.png"></image></view>  
+  </view>
+</view>

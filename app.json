@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/user/user",
+    "pages/detail/detail",
+    "pages/index/index",
+    
+    
+    "pages/list/list",
+   
+    "pages/car/car",
+    
+    
+    "pages/sort/sort"
+   
+    
+    
+   
+  ],
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#dac9a6",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/img/tabbar01.png",
+        "selectedIconPath": "/img/tabbar01-hl.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/sort/sort",
+        "iconPath": "/img/tabbar02.png",
+        "selectedIconPath": "/img/tabbar02-hl.png",
+        "text": "商品分类"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "iconPath": "/img/tabbar03.png",
+        "selectedIconPath": "/img/tabbar03-hl.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/img/tabbar04.png",
+        "selectedIconPath": "/img/tabbar04-hl.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "好货优选",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

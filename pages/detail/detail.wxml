@@ -1,0 +1,77 @@
+<view class="container" style="background:#f8f8f8;">
+  <view class='top'>
+    <image src='/img/banner.jpg'></image>
+  </view>
+  <view class='sort'>
+    <view class="sort01">Finlayson 印花T恤(短袖)</view>
+    <view class="sort02">销售价￥
+      <text>69.00</text>
+    </view>
+    <view class="sort03">已售 32 件</view>
+    <view class='share'>
+      <image src='/img/detail/detail.png'></image>
+    </view>
+  </view>
+
+  <!-- 规格选择 -->
+  <view class="specification" bindtap="clickme">已选： <text class="specification01">黑色 164/XL</text> 
+  <text class="specification02">></text> </view>
+  <view class='shop'>
+    <text class="shop01">全部商品</text>
+    <text class="shop02">进入店铺</text>
+  </view>
+
+  <!-- 商品详情 -->
+  <view class="html">
+    <text class="htmlTop">图文详情</text>
+    <view class="htmlImg"><image mode="widthFix" src='/img/banner.jpg'></image></view>
+  </view>
+
+<!-- 底部栏 -->
+<view class="fixBottom">
+  <view class="fixBottom01"><image src="/img/detail/car.png"></image><text>1</text></view>
+  <view class="fixBottom02"><image src="/img/detail/shopping.png"></image></view>
+  <view class="fixBottom03">加入购物车</view>
+  <view class="fixBottom04">立即购买</view>
+</view>
+
+
+  <!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="commodityTop">
+    <view class="commodityImg"><image src='/img/banner.jpg'></image></view>
+    <view class="commodityText">
+      <view style="color:#dac9a6;">￥138</view>
+      <view>库存1000件</view>
+      <view>已选：</view>
+    </view>
+    <view class="close" bindtap="hideModal">×</view>
+  </view>
+  <view class="chima">
+    <view class="chima01">尺码</view>
+    <view class="chimaSort">
+      <text>M</text><text>M</text><text>M</text><text>M</text><text>M</text><text>M</text>
+    </view>
+  </view>
+   <view class="chima">
+    <view class="chima01">颜色</view>
+    <view class="chimaSort">
+      <text>819灰色</text><text>819灰色</text><text>819灰色</text><text>819灰色</text><text>9998红色</text>
+    </view>
+  </view>
+  <view class="chima" style="border-bottom:none;">
+    <view class="chima01">购买数量</view>
+    <view class="num">
+    <text class='num-down'>-</text>
+    <text class="num-num"> 1 </text>
+    <text class="num-add">+</text>
+  </view>
+  </view>
+   <view class="bottom">
+    <view class="join">加入购物车</view>
+    <view class="shopping">立即购买</view>
+  </view>
+</view>
+</view>

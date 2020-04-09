@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="top">
+    <view class="sortLeft"><image src='/img/sort/icon01.png'></image></view>
+    <view class='search'><input placeholder="请输入搜索的商品"></input></view>
+  </view>
+  <view class="sort">
+    <view class="list">
+      <view class="detail">
+      <view class="detailImg"><image src='/img/banner.jpg'></image></view>
+      <view class="detailTitle">
+        <view class="detailText">Finlayson印花T恤(短袖)</view>
+        <view class="detailBottom">
+          <view class='detailLeft'>￥ <text>66.00</text></view>
+          <view class='detailRight'><image src="/img/sort/car.png"></image></view>
+        </view>
+      </view>
+    </view>
+    <view class="detail">
+      <view class="detailImg"><image src='/img/banner.jpg'></image></view>
+      <view class="detailTitle">
+        <view class="detailText">Finlayson印花T恤(短袖)</view>
+        <view class="detailBottom">
+          <view class='detailLeft'>￥ <text>66.00</text></view>
+          <view class='detailRight'><image src="/img/sort/car.png"></image></view>
+        </view>
+      </view>
+    </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+.top {width:100%;height:230rpx;background: #dac9a6;}
+.top view {float:left;}
+.top01 {margin-left: 28rpx;width:90rpx;height:90rpx;border: 2px solid #fff;border-radius: 50%;
+  position: relative;top:50%;margin-top: -45rpx;
+}
+.top01 image {width:90rpx;height:90rpx;border-radius: 50%;}
+.top02 {margin-left: 26rpx;font-size: 30rpx;color: #fff;line-height: 230rpx;}
+.top03 {margin-left: 20rpx;line-height: 230rpx;}
+.top03 image {width:40rpx;height:40rpx;vertical-align: middle;}
