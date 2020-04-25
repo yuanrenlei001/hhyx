@@ -1,0 +1,16 @@
+<view class="container" >
+  <view class="top">
+    <view class="money">￥ <text>0.00</text></view>
+  </view>
+  <view class='detail'>
+    <view class="detailTop"><text>余额明细</text></view>
+    <view class="detailSort">
+      <view class="detailSort01">
+        <view class="detailSort02">印花T恤(短袖)</view>
+        <view class="detailSort03">2018-05-01</view>
+        <view class="detailSort04">+69.00</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn">提 现</view>
+</view>

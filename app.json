@@ -1,6 +1,9 @@
 {
   "pages": [
+    "pages/user/date/date",
+    "pages/user/order/order",
     "pages/user/user",
+    "pages/user/money/money",
     "pages/detail/detail",
     "pages/index/index",
     

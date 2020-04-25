@@ -5,6 +5,12 @@ Component({
   data: {
     logs: []
   },
+    changeName() {
+      wx.switchTab({
+        url: '../user/money/money',
+      })
+    },
+  
   pageLifetimes: {
     show() {
       if (typeof this.getTabBar === 'function' &&
