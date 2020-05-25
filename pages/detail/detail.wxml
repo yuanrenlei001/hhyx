@@ -1,16 +1,17 @@
 <view class="container" style="background:#f8f8f8;">
   <view class='top'>
-    <image src='/img/banner.jpg'></image>
+    <image src='{{detail.icon}}'></image>
   </view>
   <view class='sort'>
-    <view class="sort01">Finlayson 印花T恤(短袖)</view>
+    <view class="sort01">{{detail.name}}</view>
     <view class="sort02">销售价￥
-      <text>69.00</text>
+      <text>{{detail.price}}.00</text>
     </view>
-    <view class="sort03">已售 32 件</view>
+    <view class="sort03">已售 {{detail.sales}} 件</view>
     <view class='share'>
       <image src='/img/detail/detail.png'></image>
     </view>
+    
   </view>
 
   <!-- 规格选择 -->
@@ -18,13 +19,15 @@
   <text class="specification02">></text> </view>
   <view class='shop'>
     <text class="shop01">全部商品</text>
-    <text class="shop02">进入店铺</text>
+    <text  class="shop02">进入店铺</text>
   </view>
 
   <!-- 商品详情 -->
   <view class="html">
     <text class="htmlTop">图文详情</text>
-    <view class="htmlImg"><image mode="widthFix" src='/img/banner.jpg'></image></view>
+    <view class="htmlImg">
+     <rich-text nodes="{{detail.details}}"></rich-text>
+    </view>
   </view>
 
 <!-- 底部栏 -->
@@ -32,7 +35,8 @@
   <view class="fixBottom01"><image src="/img/detail/car.png"></image><text>1</text></view>
   <view class="fixBottom02"><image src="/img/detail/shopping.png"></image></view>
   <view class="fixBottom03">加入购物车</view>
-  <view class="fixBottom04">立即购买</view>
+  <view wx:if='{{isLogin}}'  class="fixBottom04" bindtap='Shopping' >立即购买</view>
+  <button wx:else class="fixBottom05" style="width:247rpx;" open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" >立即购买</button>
 </view>
 
 
@@ -69,9 +73,10 @@
     <text class="num-add">+</text>
   </view>
   </view>
+
    <view class="bottom">
     <view class="join">加入购物车</view>
-    <view class="shopping">立即购买</view>
+    <button class="shopping" >立即购买</button>
   </view>
 </view>
 </view>

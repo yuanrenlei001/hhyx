@@ -1,32 +1,24 @@
 <!--index.wxml-->
 <view class="container">
 <swiper class='u-wrp-bnr' indicator-dots='false' autoplay='true' interval='3000'>
-  <block wx:for="{{bnrUrl}}" wx:for-index="index">
-    <swiper-item>
-      <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
-    </swiper-item>
-  </block>
-</swiper>
+        <block wx:for="{{bnrUrl}}" wx:key="*this">
+          <swiper-item>
+            <image src='{{item.img}}' class='u-img-slide' mode='aspectFill'></image>
+          </swiper-item>
+        </block>
+      </swiper>
 <view class="title">
   <view class='imgs'><image src='/img/index/title.png'></image></view>
-  <view class="titleText">2020款夏装上新，3.5-3.8限时优惠！020款夏装上新，3.5-3.8限时优惠！020款夏装上新，3.5-3.8限时优惠！</view>
+  <view class="titleText">{{indexNews}}</view>
 </view>
 <view class='sort'>
-  <navigator url='../list/list' class="sotrDetail"><image src='/img/index/icon01.png'></image><view>上装/TOP</view></navigator>
-  <navigator url='../list/list' class="sotrDetail"><image src='/img/index/icon02.png'></image><view>下装/BOTTOM</view></navigator>
-  <navigator url='../list/list' class="sotrDetail"><image src='/img/index/icon03.png'></image><view>配饰/ACC</view></navigator>
-  <navigator url='../list/list' class="sotrDetail"><image src='/img/index/icon04.png'></image><view>母婴/CHILD</view></navigator>
+  <navigator wx:for='{{idxPage}}' url='../list/list' class="sotrDetail"><image src='{{item.icon}}'></image><view>{{item.title}}</view></navigator>
 </view>
 <view class="news">
-  <navigator url='../detail/detail' class="newsLeft">
-    <image src="/img/banner.jpg"></image>
-    <view class="newsText">夏装上新</view>
-    <view class="newsNum"><text>￥</text>66</view>
-  </navigator>
-  <navigator url='../detail/detail' class="newsRight">
-    <image src="/img/banner.jpg"></image>
-    <view class="newsText">夏装上新</view>
-    <view class="newsNum"><text>￥</text>66</view>
+  <navigator wx:for="{{cInfo}}" wx:for-index="index" url='../detail/detail' class="newsLeft">
+    <image src='{{item.icon}}'></image>
+    <view class="newsText">{{item.mallCategoryName}}</view>
+    <view class="newsNum"><text>￥</text>{{item.price}}</view>
   </navigator>
 </view>
 <view class="projectTop">
@@ -34,49 +26,16 @@
   <view class="projectTop02">flash sale</view>
 </view>
 <view class='detail'>
-  <navigator url='page/index' class="detailSort">
+  <navigator wx:for='{{listIndex}}' wx:for-index="index" url='../detail/detail?id={{item.id}}' class="detailSort">
     <view class="detailLeft">
-      <view class='detailLeft01'>法国麻条纹半开领上衣(七分袖) </view>
+      <view class='detailLeft01'>{{item.name}}</view>
      <view class="detailLeft05">
         <view class='detailLeft02'>新品价</view>
-        <view class='detailLeft03'>￥<text>89.00</text></view>
+        <view class='detailLeft03'>￥<text>{{item.price}}.00</text></view>
         <view class='detailLeft04'>点击购买>>></view>
      </view>
     </view>
-    <view class="detailRight"><image src='/img/banner.jpg'></image></view>
-  </navigator>
-  <navigator url='page/index' class="detailSort">
-    <view class="detailLeft">
-      <view class='detailLeft01'>法国麻条纹半开领上衣(七分袖) </view>
-     <view class="detailLeft05">
-        <view class='detailLeft02'>新品价</view>
-        <view class='detailLeft03'>￥<text>89.00</text></view>
-        <view class='detailLeft04'>点击购买>>></view>
-     </view>
-    </view>
-    <view class="detailRight"><image src='/img/banner.jpg'></image></view>
-  </navigator>
-  <navigator url='page/index' class="detailSort">
-    <view class="detailLeft">
-      <view class='detailLeft01'>法国麻条纹半开领上衣(七分袖) </view>
-     <view class="detailLeft05">
-        <view class='detailLeft02'>新品价</view>
-        <view class='detailLeft03'>￥<text>89.00</text></view>
-        <view class='detailLeft04'>点击购买>>></view>
-     </view>
-    </view>
-    <view class="detailRight"><image src='/img/banner.jpg'></image></view>
-  </navigator>
-  <navigator url='page/index' class="detailSort">
-    <view class="detailLeft">
-      <view class='detailLeft01'>法国麻条纹半开领上衣(七分袖) </view>
-     <view class="detailLeft05">
-        <view class='detailLeft02'>新品价</view>
-        <view class='detailLeft03'>￥<text>89.00</text></view>
-        <view class='detailLeft04'>点击购买>>></view>
-     </view>
-    </view>
-    <view class="detailRight"><image src='/img/banner.jpg'></image></view>
+    <view class="detailRight"><image src='{{item.icon}}'></image></view>
   </navigator>
 </view>
 <!-- <view class="projectTop">

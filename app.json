@@ -1,19 +1,25 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/user/user",
+        "pages/sort/sort",
+      "pages/list/list",
+    
+    "pages/user/share/share",
+    
     "pages/user/date/date",
     "pages/user/order/order",
-    "pages/user/user",
+    
     "pages/user/money/money",
     "pages/detail/detail",
-    "pages/index/index",
     
     
-    "pages/list/list",
+    
+ 
    
-    "pages/car/car",
+    "pages/car/car"
     
-    
-    "pages/sort/sort"
+
    
     
     

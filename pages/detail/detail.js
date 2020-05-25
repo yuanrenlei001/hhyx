@@ -1,3 +1,5 @@
+let common = require('../Common/common.js')
+
 const app = getApp()
 Page({
 
@@ -5,15 +7,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showModalStatus: false
+    showModalStatus: false,
+    detail:'',
+    id:'',
+    isLogin: true
   },
-
+  Shopping: function () {
+    wx.getSetting({
+      success(res){
+        wx.getUserInfo({
+          success: function (res) {
+            console.log(res)
+          },
+          fail:function(res){
+            console.log(res)
+          }
+        })
+      },
+      fail(res){console.log(res)}
+    })
+  
+  },
+  bindGetUserInfo:function(e){
+    const that = this;
+    console.log(e.detail.userInfo)
+    if (e.detail.userInfo){
+      
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      id: options.id,
+      isLogin: app.globalData.isLogin
+    })
   },
+ 
   //点击我显示底部弹出框
   clickme: function () {
     this.showModal();
@@ -71,7 +102,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    console.log(app.globalData.userInfo)
+    let that = this;
+    // 详情
+    wx.request({
+      url: app.globalData.id + '/api/goods/findDetails',
+      data: { token: app.globalData.token, goodsId:that.data.id},
+      method: "GET",//请求方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+       console.log()
+       that.setData({
+         detail: res.data.data
+       })
+      }
+    })
   },
 
   /**

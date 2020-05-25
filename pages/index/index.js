@@ -1,3 +1,4 @@
+
 //index.js
 //获取应用实例
 const app = getApp()
@@ -11,13 +12,11 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    bnrUrl: [
-      { "url": "/img/banner.jpg" },
-      { "url": "/img/banner.jpg" },
-      { "url": "/img/banner.jpg" },
-      { "url": "/img/banner.jpg" },
-      { "url": "/img/banner.jpg" }
-    ]
+    bnrUrl: [],
+    indexNews:'',
+    cInfo:'',
+    listIndex:'',
+    idxPage:''
   },
 
   /**
@@ -70,7 +69,94 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    console.log(app.globalData.id)
+    let that= this;
+    // 首页轮播
+    wx.request({
+      url: app.globalData.id + '/api/banner/list',
+      data: { token: app.globalData.token },
+      method: "GET",//请求方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+
+        // let arr = []
+        // let obj ={}
+        // for (var i = 0; i < res.data.data.length;i++){
+        //   obj['url'] = res.data.data[i].img;
+        //   arr.push(obj)
+        // }
+        that.setData({
+          bnrUrl: res.data.data
+        })
+        console.log()
+      }
+    })
+    // 新闻头条
+    wx.request({
+      url: app.globalData.id + '/api/radio/headline',
+      data: { token: app.globalData.token },
+      method: "GET",//请求方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        that.setData({
+          indexNews: res.data.data[0].content
+        })
+      }
+    })
+    // 分类
+    wx.request({
+      url: app.globalData.id + '/api/mallCategory/idxPage',
+      data: { token: app.globalData.token },
+      method: "GET",//请求方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        that.setData({
+          idxPage: res.data.data
+        })
+      }
+    })
+    // C位商品
+    wx.request({
+      url: app.globalData.id + '/api/goods/cInfo',
+      data: { token: app.globalData.token },
+      method: "GET",//请求方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        let arr= []
+        for(var i=0;i<res.data.data.length;i++){
+          arr.push(res.data.data[i])
+        }
+        that.setData({
+          cInfo:arr
+        })
+      }
+    })
+    // 首页商品列表
+    wx.request({
+      url: app.globalData.id + '/api/goods/listIdx',
+      data: { token: app.globalData.token },
+      method: "GET",//请求方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        let arr = []
+        for (var i = 0; i < res.data.data.records.length; i++) {
+          arr.push(res.data.data.records[i])
+        }
+        that.setData({
+          listIndex: arr
+        })
+      }
+    })
   },
 
   /**

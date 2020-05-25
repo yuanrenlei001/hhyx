@@ -79,4 +79,6 @@ overflow: hidden;
 .fixBottom02 {width:138rpx;height:100%;text-align:center;position: relative;}
 .fixBottom02 image {width:35rpx;height:67rpx;line-height: 96rpx;vertical-align: middle;}
 .fixBottom03 {width:243rpx;height:100%;text-align: center;line-height: 96rpx;background: #707070;font-size: 32rpx;color: #fff;}
-.fixBottom04 {width:247rpx;height:100%;text-align: center;line-height: 96rpx;background: #dac9a6;font-size: 32rpx;color: #000;}
+/* .fixBottom04 {width:247rpx;height:100%;text-align: center;line-height: 96rpx;background: #dac9a6;font-size: 32rpx;color: #000;} */
+.fixBottom04 {position: absolute;top:0;right:0;width:247rpx;height:100%;text-align: center;line-height: 96rpx;background: #dac9a6;font-size: 32rpx;color: #000;}
+.fixBottom05 {position: absolute;top:0;right:0;border-radius: 0;height:100%;text-align: center;line-height: 96rpx;background: #dac9a6;font-size: 32rpx;color: #000;padding: 0;}

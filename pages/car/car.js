@@ -1,4 +1,5 @@
 // page/component/new-pages/cart/cart.js
+const app = getApp()
 Page({
   data: {
     carts: [],               // 购物车列表
@@ -19,6 +20,21 @@ Page({
       ]
     });
     this.getTotalPrice();
+    // 购物车列表
+    wx.request({
+      url: app.globalData.id + '/api/shopcart/list',
+      data: { token: '' },
+      method: "GET",//请求方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        // that.setData({
+        //   bnrUrl: res.data.data
+        // })
+        console.log(res.data)
+      }
+    })
   },
   /**
    * 当前商品选中事件

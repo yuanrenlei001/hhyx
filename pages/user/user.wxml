@@ -1,8 +1,8 @@
-<view class="container" style="background:#f8f8f8;">
+<view class="container" style="background:#f8f8f8;"  wx:if='{{isLogin}}'>
   <view class="top">
-    <view class='top01'><image  src="/img/banner.jpg"></image></view>
-    <view class='top02'>张三</view>
-    <view class="top03"><image src="/img/user/code.png"></image></view>  
+    <view class='top01'><image  src="{{user.avatar}}"></image></view>
+    <view class='top02'>{{user.nickName}}</view>
+    <!-- <view class="top03"><image src="/img/user/code.png"></image></view>   -->
   </view>
   <view class="topSort">
     <navigator url="../user/money/money" class="topSort01"><text class="topNum">0.00</text><text class="topText">余额</text></navigator>
@@ -12,14 +12,12 @@
   <view class="order">
     <view class="orderTop">
       <text>订单信息</text>
-      <text>查看全部订单 ></text>
+      <navigator class="ordersss" url="../user/order/order" >查看全部订单 ></navigator>
     </view>
     <view class='orderSort'>
       <navigator  url="/"><image src="/img/user/icon.png"></image><text>待付款</text></navigator>
-      <navigator  url="/"><image src="/img/user/icon01.png"></image><text>待发货</text></navigator>
-      <navigator  url="/"><image src="/img/user/icon02.png"></image><text>待收货</text></navigator>
-      <navigator  url="/"><image src="/img/user/icon03.png"></image><text>待评价</text></navigator>
-      <navigator  url="/"><image src="/img/user/icon04.png"></image><text>退款/售后</text></navigator>
+      <navigator  url="/"><image src="/img/user/icon01.png"></image><text>待付款</text></navigator>
+      <navigator  url="/"><image src="/img/user/icon04.png"></image><text>已取消</text></navigator>
     </view>
   </view>
   <view class="bottomSort">
@@ -30,3 +28,4 @@
     <navigator url='/'><image src='/img/user/icon09.png'></image>推荐</navigator>
   </view>
 </view>
+<button wx:else  style="width:347rpx;font-size:24ppx;margin-top:20px;" open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" >点击登录</button> 

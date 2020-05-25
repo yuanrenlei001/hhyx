@@ -11,14 +11,14 @@
 .topSort01 {width:33%;display: block;float:left;height:100%;border-right: 1px solid #e5e5e5;text-align: center;}
 .topSort01:last-child {border-right: none;}
 .topSort text {display: block;}
+.topText {font-size: 24rpx;}
 .ordersss {display: block;font-size: 24rpx;float:right;}
 .topNum {margin-top: 25rpx;}
 .order {width:92%;background: #fff;margin: 23rpx 0;padding: 0 28rpx;}
 .orderTop {height:82rpx;line-height: 82rpx;border-bottom: 1px solid #eee;}
 .orderTop text:first-child {font-size: 30rpx;float:left;}
-.orderTop text:last-child {font-size: 24rpx;float:right;}
 .orderSort {width:100%;position: relative;}
-.orderSort navigator {width:33.333%;display: block;float:left;font-size: 28rpx;height:153rpx;text-align: center;}
+.orderSort navigator {width:25%;display: block;float:left;font-size: 28rpx;height:153rpx;text-align: center;}
 .orderSort image {width:60rpx;height:45rpx;padding-top: 38rpx;}
 .orderSort text {display: block;}
 .bottomSort {background: #fff;width:100%;}
